@@ -8,9 +8,11 @@ USER root
 
 RUN whoami; \
 	apt-get update && apt-get upgrade -y; \
-	apt-get install -y python-pip python3 python3-pip rubygems ruby2.1 ruby2.1-dev; \
+	apt-get install -y python-pip python3 python3-pip rubygems ruby2.1 ruby2.1-dev collectd; \
 	pip install pelican; \
 	pip install markdown; \
 	gem install fpm;
+
+ADD collectd.conf /etc/collectd/collectd.conf
 
 USER jenkins
