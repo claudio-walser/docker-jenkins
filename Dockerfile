@@ -15,4 +15,4 @@ RUN whoami; \
 
 ADD collectd.conf /etc/collectd/collectd.conf
 
-#USER jenkins
+USER jenkins
